@@ -14,23 +14,39 @@ import org.junit.Test;
 public class AppTest extends TestCase {
 
    @Test
-   public void testSoftReference() throws Exception {
-      Set<byte[]> s = new HashSet<byte[]>();
+   public void withStrongReference() throws Exception {
+      assertTrue(true);
+   }
+
+   //@Test
+   public void _testSoftReference() throws Exception {
+      Set<BigObject> set = new HashSet<BigObject>();
       SoftReference<Object> sr = new SoftReference<Object>(new Object());
       int i = 0;
 
       while (true) {
          try {
-            s.add(new byte[1000]);
+            //set.add(new BigObject());
          } catch (OutOfMemoryError e) {
             // ignore
          }
+
          if (sr.get() == null) {
             System.out.println("Soft reference is cleared. Success!");
             break;
          }
+
          i++;
          System.out.println("Soft reference is not yet cleared. Iteration " + i);
+      }
+   }
+
+   //@Test
+   public void _testSoftReference2() throws Exception {
+      Set<BigObject> set = new HashSet<BigObject>();
+
+      for (int j = 0; j < 30000; j++) {
+         //set.add(new BigObject());
       }
    }
 }
