@@ -3,11 +3,9 @@ package com.vidal.cr;
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 
-public class StrongReferenceTest extends TestCase {
+public class StrongReferenceTest extends AbstractTest {
 
    @Test
    public void testWithStrongReference() throws Exception {

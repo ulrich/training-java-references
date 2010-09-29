@@ -6,11 +6,9 @@ import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 
-public class PhantomReferenceTest extends TestCase {
+public class PhantomReferenceTest extends AbstractTest {
 
    @Test
    public void testWithPhantomReferenceAndReferenceQueueV1() throws Exception {

@@ -6,11 +6,9 @@ import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import junit.framework.TestCase;
-
 import org.junit.Test;
 
-public class SoftReferenceTest extends TestCase {
+public class SoftReferenceTest extends AbstractTest {
 
    @Test
    public void testWithSoftReference() throws Exception {
@@ -29,13 +27,13 @@ public class SoftReferenceTest extends TestCase {
 
       for (int i = 0; i < 64; i++) {
          SoftReference<BigObject> current = new SoftReference<BigObject>(new BigObject(i), queue);
-         System.out.println("Vient de créer l'objet id=" + current.get().getId());
+         System.out.println("-> Vient de créer l'objet id=" + current.get().getId());
          list.add(current);
 
          @SuppressWarnings("unchecked")
          Reference<BigObject> r = (Reference<BigObject>) queue.poll();
          if (r != null) {
-            System.out.println("L'objet " + r.toString() + " a été garbage collecté!");
+            System.out.println("<- Un objet a été garbage collecté!");
          }
       }
    }
