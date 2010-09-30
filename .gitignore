@@ -1,0 +1,15 @@
+**/target/*
+**/eclipse/*
+**/bin/*
+**/lib/*
+**/tmp/*
+**/*.classpath
+**/*.project
+**/*.settings/*
+**/*.iml
+**/*.ipr
+**/*test-result*
+**/*conf/*
+**/*log/*
+**/*foobar/*
+**/velocity.log
