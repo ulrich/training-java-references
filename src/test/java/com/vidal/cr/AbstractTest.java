@@ -6,7 +6,7 @@ import java.io.PrintStream;
 
 import junit.framework.TestCase;
 
-public class AbstractTest extends TestCase {
+public abstract class AbstractTest extends TestCase {
 
    public AbstractTest() {
       FileOutputStream fos;
