@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 public class WeakReferenceTest extends AbstractTest {
+   List<BigObject> list2 = new ArrayList<BigObject>();
 
    @Test
    public void testWithWeakReferenceAndReferenceQueue() throws Exception {
@@ -17,7 +18,9 @@ public class WeakReferenceTest extends AbstractTest {
       ReferenceQueue<BigObject> queue = new ReferenceQueue<BigObject>();
 
       for (int i = 0; i < 64; i++) {
-         WeakReference<BigObject> current = new WeakReference<BigObject>(new BigObject(i), queue);
+         BigObject bigObject = new BigObject(i);
+         list2.add(bigObject);
+         WeakReference<BigObject> current = new WeakReference<BigObject>(bigObject, queue);
          System.out.println("Vient de créer l'objet id=" + current.get().getId());
          list.add(current);
 

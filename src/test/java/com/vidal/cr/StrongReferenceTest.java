@@ -11,7 +11,7 @@ public class StrongReferenceTest extends AbstractTest {
    public void testWithStrongReference() throws Exception {
       List<BigObject> list = new ArrayList<BigObject>();
 
-      for (int i = 0; i < 64; i++) {
+      for (int i = 0; i < 32; i++) {
          list.add(new BigObject(i));
       }
    }
